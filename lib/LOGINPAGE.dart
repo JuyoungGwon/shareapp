@@ -19,10 +19,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
+FirebaseAuth auth = FirebaseAuth.instance;
+User user = FirebaseAuth.instance.currentUser;
 class LoginPage extends StatefulWidget {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  User user = FirebaseAuth.instance.currentUser;
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -159,6 +165,10 @@ class _OtherProvidersSignInSectionState
                   ),
                   onPressed: () async {
                     _signInWithGoogle();
+                    FirebaseFirestore.instance.collection('userstore').doc( user.email.substring(0,8))
+                        .set({'student_id' : user.email.substring(0,8), 'name' : user.displayName, 'Email' : user.email, 'English_name' : "",
+                      'CellPhone': "", 'BANK' :"", 'Accountnum' : "",
+                        });
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Paytm()),

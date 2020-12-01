@@ -2,7 +2,7 @@ import 'package:final_project/Gridmodel.dart';
 import 'package:flutter/material.dart';
 import 'menu.dart';
 import 'Gridmodel.dart';
-
+import 'EDIT.dart';
 import 'home.dart';
 import 'LOGINPAGE.dart';
 import 'hansikchatpage.dart';
@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
         'hansikchat' : (context) => hansikchat(),
         'MYPAGE' : (context) => PROFILE(),
         'menu' : (context) => Paytm1(),
+        'EDIT' : (context) => EDITPAGE(),
      //   '/add': (context) => ADDPRODUCTPAGE(),
       //  '/homepagedetail': (context) => DETAILPAGE(),
      //   '/profile': (context) => PROFILE(),
