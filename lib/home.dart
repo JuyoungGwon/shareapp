@@ -1,10 +1,12 @@
 import 'dart:math';
+import 'package:final_project/recommend.dart';
 import 'package:flutter/material.dart';
 import 'Gridmodel.dart';
 import 'LOGINPAGE.dart';
 import 'MYPAGE.dart';
 import 'hansikchatpage.dart';
 import 'menu.dart';
+import 'recommend.dart';
 class Paytm extends StatefulWidget {
   @override
   _PaytmState createState() => _PaytmState();
@@ -15,7 +17,7 @@ class _PaytmState extends State<Paytm> {
     List<Widget> _widgetOptions = <Widget>[
       Paytm1(),
       LoginPage(),
-      PROFILE(),
+      Home(),
       PROFILE(),
     ];
     void _onItemTapped(int index) {

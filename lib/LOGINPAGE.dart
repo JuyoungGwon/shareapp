@@ -33,6 +33,7 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 class _LoginPageState extends State<LoginPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,6 +135,7 @@ class _AnonymouslySignInSectionState extends State<_AnonymouslySignInSection> {
         content: Text("Failed to sign in Anonymously"),
       ));
     }
+
   }
 }
 
@@ -165,10 +167,13 @@ class _OtherProvidersSignInSectionState
                   ),
                   onPressed: () async {
                     _signInWithGoogle();
-                    FirebaseFirestore.instance.collection('userstore').doc( user.email.substring(0,8))
-                        .set({'student_id' : user.email.substring(0,8), 'name' : user.displayName, 'Email' : user.email, 'English_name' : "",
-                      'CellPhone': "", 'BANK' :"", 'Accountnum' : "",
-                        });
+
+
+
+                 //   FirebaseFirestore.instance.collection('userstore').doc( user.email.substring(0,8))
+                  //      .set({'student_id' : user.email.substring(0,8), 'name' : user.displayName, 'Email' : user.email, 'English_name' : "",
+                  //    'CellPhone': "", 'BANK' :"", 'Accountnum' : "",
+                  //      });
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Paytm()),
@@ -187,7 +192,7 @@ class _OtherProvidersSignInSectionState
     );
   }
 
-  //Example code of how to sign in with Google.
+
   void _signInWithGoogle() async {
     try {
       UserCredential userCredential;

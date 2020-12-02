@@ -11,6 +11,7 @@ import 'MYPAGE.dart';
 //import 'ADDPRODUCT.dart';
 //import 'DETAIL.dart';
 //import 'PROFILE.dart';
+import 'recommend.dart';
 // TODO: Convert ShrineApp to stateful widget (104)
 class MyApp extends StatelessWidget {
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         'MYPAGE' : (context) => PROFILE(),
         'menu' : (context) => Paytm1(),
         'EDIT' : (context) => EDITPAGE(),
+        'recommend' : (context) => Home(),
      //   '/add': (context) => ADDPRODUCTPAGE(),
       //  '/homepagedetail': (context) => DETAILPAGE(),
      //   '/profile': (context) => PROFILE(),

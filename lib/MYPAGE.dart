@@ -36,6 +36,8 @@ class PROFILE extends StatefulWidget {
 }
 
 class _PROFILE extends State<PROFILE> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  User user = FirebaseAuth.instance.currentUser;
   TextEditingController controller1 = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -46,14 +48,14 @@ class _PROFILE extends State<PROFILE> {
 
               backgroundColor: Colors.white,
               leading: IconButton(
-                icon: Icon(
-                  Icons.arrow_back,
-                  semanticLabel: 'Back Button',
-                ),
+                  icon: Icon(
+                    Icons.arrow_back,
+                    semanticLabel: 'Back Button',
+                  ),
                   onPressed: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Paytm()));
+                        MaterialPageRoute(builder: (context) => PROFILE()));
                   }
               ),
               title: Text("My Page", style: TextStyle(color: Colors.black),),
@@ -273,6 +275,18 @@ class _PROFILE extends State<PROFILE> {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => EDITPAGE(product:record, data: data)));
+              print(user.metadata);
+              print(user.providerData);
+              print(user.tenantId);
+              print(user.phoneNumber);
+              print(user.displayName);
+              print(user.email);
+              print(user.emailVerified);
+              print(user.photoURL);
+              print(user.refreshToken);
+              print(user.uid);
+              print(user.hashCode);
+              print(user.runtimeType);
             },
             child: Text('개인정보 수정'),
           ),
@@ -282,4 +296,3 @@ class _PROFILE extends State<PROFILE> {
     ]);
   }
 }
-
